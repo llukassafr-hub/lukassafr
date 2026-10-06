@@ -1,11 +1,15 @@
-# Instagram Reel — v4
+# Direct-upload Reel v5 — NO BACKGROUND MUSIC
 
-[Download latest video](reel-instagram-v4.mp4) — open and choose **Download raw file**.
+[Download latest MP4](reel-direct-no-music-v5.mp4): open it and choose **Download raw file**.
 
-1080 × 1920, 60 fps, 34.7 seconds. Same professional gold/charcoal visual identity and speech edit, with more natural presenter framing, larger captions raised into a conservative Instagram UI reserve, restrained animations, refined information cards and subtle sound design.
+1080 × 1920 · 60 fps · 34.7 s. Presenter footage and original voice regenerated directly from the latest user upload. Smoothed face tracking, vertical composition, short animated Czech Montserrat captions, contextual finance graphics, illustrated Capitol cutaway and a full-screen 17-year comparison.
 
-Caption timing is based on speech recognition; it has not been verified by human listening. Instagram UI varies by device and expanded captions. The Andrew Sharp card is a prepared reference asset from the supplied screenshot, not a pixel-exact original.
+Audio contains only the original cleaned voice and restrained, short sound effects. No background music layer.
 
-![Preview](preview-v4.jpg)
+![Preview](preview-v5.jpg)
 
-[Czech captions](reel-instagram-v4.cs.srt) · [Previous v3](reel-retention-v3.mp4) · [v2](reel-premium-60fps.mp4) · [v1](reel.mp4)
+[Czech subtitle file](reel-direct-v5.cs.srt)
+
+Timing uses speech recognition without human-listening verification. Instagram UI varies by device and expanded captions; overlays use a conservative reserve. Capitol is a labeled illustration; the Andrew Sharp card is prepared from the supplied visual reference.
+
+Prior exports remain available: [v4](reel-instagram-v4.mp4), [v3](reel-retention-v3.mp4), [v2](reel-premium-60fps.mp4), [v1](reel.mp4).
