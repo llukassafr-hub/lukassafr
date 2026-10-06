@@ -1,13 +1,13 @@
-# Reel – přepracovaná verze
+# Reel v3 – kinetické titulky a rozšířená grafika
 
-![Náhled nového editu](preview.jpg)
+![Náhled](preview-v3.jpg)
 
-[Stáhnout nové MP4 v 60 fps](reel-premium-60fps.mp4) · [České titulky SRT](reel-premium.cs.srt)
+[Nové MP4 v3](reel-retention-v3.mp4) · [České titulky SRT](reel-retention-v3.cs.srt)
 
-Na stránce MP4 použijte **Download raw file**.
+Na stránce souboru klikněte na **Download raw file**.
 
-Nový edit: 1080 × 1920, 60 fps, 34,7 sekundy. České titulky se zvýrazněním slov, nové tmavé studio, obsahové karty BDC, animace rozdělení 90 % příjmu, srovnání 17 let / S&P 500, ilustrační záběr Kongresu, upravený hlas, původní instrumentální hudba a decentní sound design.
+1080 × 1920, 60 fps, 34,7 sekundy. Montserrat ExtraBold, krátké významové titulky, odhalování slov podle časování řeči, selektivní zvýraznění a animované podtržení. Rozšířené dividendové countery, money-flow, časová osa 17 let, burzovní a legislativní panely. Karta Andrew Sharp připravená podle dodané reference, důraz na název kanálu. Reframing, jemné punch-in změny, doplněné zvukové akcenty.
 
-Původní export je zachován jako `reel.mp4`.
+Předchozí verze zůstávají zachované: [v2](reel-premium-60fps.mp4), [v1](reel.mp4).
 
-Poznámka: Studio a ilustrační záběr Kongresu jsou generované vizuály. Číselná tvrzení vycházejí z promluvy; edit nedoplňuje neexistující historická data. Původní záběr řečníka má rozlišení 1280 × 720.
+Pozadí a ilustrační záběr Kongresu jsou generované vizuály. Karta kanálu byla připravena z dodané obrazové reference; nejde o nezměněnou kopii původního screenshotu. Čísla vycházejí z promluvy, grafiky nepřidávají vymyšlené ceny akcií ani historická výnosová data.
