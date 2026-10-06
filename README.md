@@ -1,13 +1,11 @@
-# Reel v3 – kinetické titulky a rozšířená grafika
+# Instagram Reel — v4
 
-![Náhled](preview-v3.jpg)
+[Download latest video](reel-instagram-v4.mp4) — open and choose **Download raw file**.
 
-[Nové MP4 v3](reel-retention-v3.mp4) · [České titulky SRT](reel-retention-v3.cs.srt)
+1080 × 1920, 60 fps, 34.7 seconds. Same professional gold/charcoal visual identity and speech edit, with more natural presenter framing, larger captions raised into a conservative Instagram UI reserve, restrained animations, refined information cards and subtle sound design.
 
-Na stránce souboru klikněte na **Download raw file**.
+Caption timing is based on speech recognition; it has not been verified by human listening. Instagram UI varies by device and expanded captions. The Andrew Sharp card is a prepared reference asset from the supplied screenshot, not a pixel-exact original.
 
-1080 × 1920, 60 fps, 34,7 sekundy. Montserrat ExtraBold, krátké významové titulky, odhalování slov podle časování řeči, selektivní zvýraznění a animované podtržení. Rozšířené dividendové countery, money-flow, časová osa 17 let, burzovní a legislativní panely. Karta Andrew Sharp připravená podle dodané reference, důraz na název kanálu. Reframing, jemné punch-in změny, doplněné zvukové akcenty.
+![Preview](preview-v4.jpg)
 
-Předchozí verze zůstávají zachované: [v2](reel-premium-60fps.mp4), [v1](reel.mp4).
-
-Pozadí a ilustrační záběr Kongresu jsou generované vizuály. Karta kanálu byla připravena z dodané obrazové reference; nejde o nezměněnou kopii původního screenshotu. Čísla vycházejí z promluvy, grafiky nepřidávají vymyšlené ceny akcií ani historická výnosová data.
+[Czech captions](reel-instagram-v4.cs.srt) · [Previous v3](reel-retention-v3.mp4) · [v2](reel-premium-60fps.mp4) · [v1](reel.mp4)
