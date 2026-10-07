@@ -1,0 +1,30 @@
+{
+  "finance-fresh-4k.mp4": {
+    "width": 3840,
+    "height": 2160,
+    "fps": 60,
+    "frames": 1174,
+    "duration": 19.566667,
+    "bytes": 19349210,
+    "full_decode": "passed",
+    "colors": "Rec.709"
+  },
+  "finance-fresh-1080p.mp4": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "frames": 1174,
+    "duration": 19.566667,
+    "bytes": 6697784,
+    "full_decode": "passed",
+    "colors": "Rec.709"
+  },
+  "voice_sync": {
+    "offset_samples": 0,
+    "correlation": 0.9998628214093053
+  },
+  "mix": {
+    "sample_peak_dbfs": -1.630403387025077,
+    "music": false
+  }
+}
