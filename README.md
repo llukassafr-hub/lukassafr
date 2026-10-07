@@ -1,7 +1,7 @@
-# Reel — méně zoomů, plynulejší pohyb
+# Reel — studiová stěna bez podlahy
 
-Pouze čtyři změny kompozice postavy s plynulým rozjezdem a dojezdem přes 0,85 s. Odstraněné drobné punch-iny a zklidněné zvětšování B-rollu i grafiky. Zlaté zvýraznění, podtržení, glow, původní hlas a jemné efekty zachovány. Bez hudby.
+Souvislá tmavá studiová stěna s jemným zlatým a modrým světlem. Bez viditelné podlahy a horizontu. Původní postava, čtyři plynulé přejezdy, titulky, grafika, glow a zvuk zachovány.
 
-[Stáhnout MP4](reel-smooth-zooms.mp4?raw=true)
+[Stáhnout MP4](reel-studio-wall.mp4?raw=true)
 
-1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze zachovány.
+1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Bez hudby. Předchozí verze jsou zachované.
