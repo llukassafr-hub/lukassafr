@@ -1,3 +1,3 @@
-Cinematic daydream opening. Original footage, 219 frames, 3.65s, 3840x2160, 60 FPS. Subtle peripheral diffusion, source-footage double exposure, highlight bloom and restrained sound design.
+Dividend clip edited in the supplied dark-gold/cream editorial reference style. Original source speech and 14.9s sequence. 1920x1080, 60 FPS. Custom money-flow illustration, serif quote card, synchronized yield bars and monthly calendar. Subtle SFX, no music added.
 
-Download: https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reel-dream-intro.mp4
+https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reference-dividend.mp4
