@@ -1,11 +1,7 @@
-# Upravené finance video — soubory ke stažení
+# Nový Instagram Reel
 
-Nejnovější výstup podle dodaného zadání: YouTube 16:9, 60 FPS, skutečný řečník a původní hlas, tmavé studio, obsahové grafiky, selektivní české texty a jemné zvukové efekty.
+Nejnovější dodané video, upravené podle posledního vloženého zadání: 1080 × 1920, 60 FPS, původní český hlas bez hudby, obsahové grafiky, krátké animované titulky a jemné zvukové efekty.
 
-- [Stáhnout Full HD MP4 — 6,7 MB](finance-youtube-1080p.mp4?raw=true)
-- [Stáhnout 4K MP4 — 19,3 MB](finance-youtube-4k.mp4?raw=true)
-- [Náhled](finance-youtube-preview.jpg)
+[Stáhnout MP4](reel-premium-social.mp4?raw=true)
 
-Pokud se otevře stránka souboru místo videa, zvolte **Download raw file**. Soubory jsou H.264 / AAC v kontejneru MP4. Oba prošly úplným dekódováním bez chyby: 1174 snímků při 60 FPS, 19,5667 s, Rec.709. Ověřený hlas nemá časový posun. Grafika je ve 4K; původní záběr řečníka je Full HD. Kancelářský insert je označený jako ilustrační vizuál. Hudba není použita.
-
-Předchozí exporty zůstávají ve větvi zachované.
+Kongres je označený ilustrační záběr. Výstup používá H.264/AAC, Rec.709 a prošel úplným dekódováním. Předchozí exporty jsou zachovány.

@@ -1,0 +1,16 @@
+{
+  "source": "new uploaded reel.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "frames": 2126,
+  "duration": "35.435000",
+  "codec": "H.264/AAC",
+  "color": "limited Rec.709",
+  "fullDecode": "passed",
+  "music": false,
+  "voice": "original",
+  "brief": "latest uploaded brief",
+  "audioAlignmentSamples": 0,
+  "voiceCorrelation": 0.9998386912355129
+}
