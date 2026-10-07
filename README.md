@@ -1,7 +1,9 @@
-# Reel — pozadí podle dodaného obrázku
+# Video editor story — 500 Kč
 
-Vertikální adaptace reference s teplým světlem, žárovkou, rostlinou a tmavou stěnou. Kompozice, plynulé pohyby, titulky, grafika a původní hlas zachovány. Bez hudby.
+[Download final MP4](https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-export-delivery/reel-editor-500kc.mp4)
 
-[Stáhnout MP4](reel-requested-background.mp4?raw=true)
+1080×1920, 60 fps, original Czech speaker, no background music. Intro removed; original story order preserved. Animated editing timeline, workload counter and synchronized payment reveal. Original voice and restrained sound effects.
 
-1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze zachovány.
+## Previous version
+
+[Warm studio background Reel](https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-export-delivery/reel-requested-background.mp4)
