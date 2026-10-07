@@ -1,7 +1,7 @@
-# Reel — stínování, zvýraznění a glow
+# Reel — méně zoomů, plynulejší pohyb
 
-Aktuální střih s pevnějšími stíny textu, animovaným podtržením, zlatým zvýrazněním klíčových slov a jemným glow u čísel a grafických karet. Kompozice, tempo, původní hlas a jemné zvukové efekty zachovány. Bez hudby.
+Pouze čtyři změny kompozice postavy s plynulým rozjezdem a dojezdem přes 0,85 s. Odstraněné drobné punch-iny a zklidněné zvětšování B-rollu i grafiky. Zlaté zvýraznění, podtržení, glow, původní hlas a jemné efekty zachovány. Bez hudby.
 
-[Stáhnout MP4](reel-highlight-glow.mp4?raw=true)
+[Stáhnout MP4](reel-smooth-zooms.mp4?raw=true)
 
-1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze jsou zachovány.
+1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze zachovány.
