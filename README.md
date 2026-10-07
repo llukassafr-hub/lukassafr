@@ -1,7 +1,7 @@
-# Doladěný Instagram Reel
+# Reel — stínování, zvýraznění a glow
 
-Nejnovější zdroj reel 716 -1.mp4: zachovaná zlatá a tmavá identita, přirozená postava v 9:16, o něco větší a výše umístěné animované české titulky, decentní obsahová grafika a zvukové efekty. Původní hlas bez hudby.
+Aktuální střih s pevnějšími stíny textu, animovaným podtržením, zlatým zvýrazněním klíčových slov a jemným glow u čísel a grafických karet. Kompozice, tempo, původní hlas a jemné zvukové efekty zachovány. Bez hudby.
 
-[Stáhnout MP4](reel-polished-instagram.mp4?raw=true)
+[Stáhnout MP4](reel-highlight-glow.mp4?raw=true)
 
-1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí výstupy jsou zachovány.
+1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze jsou zachovány.
