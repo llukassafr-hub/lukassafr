@@ -1,0 +1,14 @@
+{
+  "duration": 3.65,
+  "frames": 219,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "fps": 60,
+  "fullDecode": "passed",
+  "source": "uvod-1.mp4",
+  "sha256": "a856240ddc752be307acfdd4d4e18299094d2a76c8aa9df71096a1c48dfadfae",
+  "originalSequencePreserved": true,
+  "musicAdded": false
+}

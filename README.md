@@ -1,3 +1,3 @@
-Improved presenter mask and additional speech-aligned editing graphics. 1080x1920, 60 FPS. Original voice, no music.
+Cinematic daydream opening. Original footage, 219 frames, 3.65s, 3840x2160, 60 FPS. Subtle peripheral diffusion, source-footage double exposure, highlight bloom and restrained sound design.
 
-Download: https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reel-editor-enhanced.mp4
+Download: https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reel-dream-intro.mp4
