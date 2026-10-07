@@ -1,7 +1,7 @@
-# Reel — studiová stěna bez podlahy
+# Reel — pozadí podle dodaného obrázku
 
-Souvislá tmavá studiová stěna s jemným zlatým a modrým světlem. Bez viditelné podlahy a horizontu. Původní postava, čtyři plynulé přejezdy, titulky, grafika, glow a zvuk zachovány.
+Vertikální adaptace reference s teplým světlem, žárovkou, rostlinou a tmavou stěnou. Kompozice, plynulé pohyby, titulky, grafika a původní hlas zachovány. Bez hudby.
 
-[Stáhnout MP4](reel-studio-wall.mp4?raw=true)
+[Stáhnout MP4](reel-requested-background.mp4?raw=true)
 
-1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Bez hudby. Předchozí verze jsou zachované.
+1080 × 1920, 60 FPS, H.264/AAC, Rec.709. Předchozí verze zachovány.
