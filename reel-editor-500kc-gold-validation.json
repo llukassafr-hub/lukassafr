@@ -1,0 +1,16 @@
+{
+  "source": "660 edit(1).mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "frames": 1818,
+  "duration": "30.315000",
+  "codec": "H.264/AAC",
+  "color": "limited Rec.709",
+  "fullDecode": "passed",
+  "music": false,
+  "voice": "original",
+  "brief": "video editor story; original chronology; 500 CZK reveal at 24.9667s",
+  "audioAlignmentSamples": 0,
+  "voiceCorrelation": 0.9998908520961975
+}
