@@ -1,5 +1,3 @@
-# Refined subject composite
+Improved presenter mask and additional speech-aligned editing graphics. 1080x1920, 60 FPS. Original voice, no music.
 
-[Download Reel](https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reel-editor-refined.mp4)
-
-1080×1920, 60 fps. Refined high-resolution subject matting, edge color cleanup and subtle compositing shadow. Captions, graphics, B-roll, timing and original voice retained. No music.
+Download: https://github.com/llukassafr-hub/lukassafr/raw/refs/heads/reel-editor-solid-delivery/reel-editor-enhanced.mp4
