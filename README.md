@@ -1,1 +1,1 @@
-Telegram logo version, label removed as requested. Original audio and smooth animations retained. 1920x1080/60.
+video 3-1.mp4 edited in the matching editorial reference style: five-year timeline, 150 CZK/hour, broad market index diagram and attributed past reaction. Original voice, 13.05s, 1920x1080/60. Smooth transitions, subtle SFX, no added music.
