@@ -1,1 +1,2 @@
-video 3-1.mp4 edited in the matching editorial reference style: five-year timeline, 150 CZK/hour, broad market index diagram and attributed past reaction. Original voice, 13.05s, 1920x1080/60. Smooth transitions, subtle SFX, no added music.
+Five-year glow card animated behind the original presenter with a tracked per-frame foreground mask. Other scenes and original voice retained. 1920x1080/60.
+Includes a 2.9-second excerpt of user-supplied junior IT B-roll, muted, aligned with the work/pay passage.
