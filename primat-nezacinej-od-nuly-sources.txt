@@ -1,0 +1,13 @@
+Zadání kampaně: https://www.klipni.eu/inzerat/7
+Web: https://www.primat.cz/
+Příklad materiálu: https://www.primat.cz/material/the-czech-republic/355306
+Testování: https://www.primat.cz/testovani
+AI: https://www.primat.cz/#ai
+Logo: oficiální SVG webu Primát.cz
+Video: https://www.pexels.com/video/8085786/
+Video: https://www.pexels.com/video/2086113/
+Licence Pexels: https://www.pexels.com/license/
+
+Ve videu jsou skutečné veřejné stránky. Přihlášení, stažení dokumentu ani generování AI výstupu nebylo předstíráno.
+Odkazy na Drive a Instagram nebyly přístupné kvůli síťovým pravidlům prostředí. Potřebné domény byly přidány do návrhu nastavení, změna vyžaduje uložení a publikování prostředí.
+Video nemá voiceover; dodán je scénář pro jeho následné nahrání.
