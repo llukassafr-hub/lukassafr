@@ -1,0 +1,7 @@
+Ověřené veřejné stránky: https://www.primat.cz/ a https://www.primat.cz/testovani
+Webové screenshoty, materiály, testy a AI funkce jsou skutečné veřejné stránky, ne předstírané výsledky práce přihlášeného uživatele.
+Logo je oficiální z webu Primátu. Složka Drive byla dostupná a obsahuje primat-logo-500.png, primat-logo-1600.png a Primát-logo-socials.jpg; přímé stažení přes redirect vrací 403.
+Veřejné popisky všech tří instagramových ukázek byly dostupné; samotná videa nebyla veřejnou odpovědí poskytnuta.
+Pexels: https://www.pexels.com/video/8085786/ a https://www.pexels.com/video/2086113/
+Licence: https://www.pexels.com/license/
+Video má 27 sekund, 9:16, 60 FPS. Obsahuje zvukové efekty; voiceover se dodává zvlášť.
