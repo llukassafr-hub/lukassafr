@@ -1,0 +1,8 @@
+Nahraj každý řádek samostatně. Možnosti jsou na kartičce, nečti je. Odpočty jsou bez řeči.
+
+Úvod: Jednička z matiky neznamená, že umíš počítat.
+Otázka 1: Osm děleno dvěma krát závorka dva plus dva.
+Odpověď 1: Šestnáct. Násobíme a dělíme zleva doprava.
+Otázka 2: Kolik je mínus tři na druhou bez závorek?
+Odpověď 2: Mínus devět. Se závorkami by vyšlo devět.
+Závěr: Známky, nebo skutečné znalosti? Napiš skóre a postup.
