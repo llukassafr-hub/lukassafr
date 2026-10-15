@@ -1,0 +1,10 @@
+Nahraj osm krátkých řádků samostatně.
+
+1. Jeden test.
+2. Jedna pětka. A hotovo?
+3. Proč trestat první pokus?
+4. Chyba ukáže mezeru.
+5. Oprava ukáže, co ses naučil.
+6. Ale co stejná pravidla pro všechny?
+7. Trest, nebo další pokus?
+8. Pětka, nebo oprava? Napiš proč. Testy najdeš na Primat cé zet.
