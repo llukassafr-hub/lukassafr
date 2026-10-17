@@ -1,0 +1,28 @@
+name: Deliver story with all Czech dialogue
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-full.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-full/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-full/part* > videos/pribeh-vsechny-ceske-repliky.mp4
+          echo '95ba92cc7531d62d981f511fc471d79f41c35992d2f7451967ef1bfed68fd156  videos/pribeh-vsechny-ceske-repliky.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-vsechny-ceske-repliky.mp4
+          git commit -m "Add complete Czech dialogue story with continuous music"
+          git push
