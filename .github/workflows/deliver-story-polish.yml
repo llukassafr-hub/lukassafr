@@ -1,0 +1,28 @@
+name: Deliver polished story revision
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-polish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-polish/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-polish/part* > videos/pribeh-doladeny-110.mp4
+          echo 'c643fc6c18c720257ebb086a4018908acf1de8f405834a260c3476210b487b80  videos/pribeh-doladeny-110.mp4' | sha256sum -c -
+      - name: Save polished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-doladeny-110.mp4
+          git commit -m "Polish story speed, opening, close-up, dialogue and photo scene"
+          git push
