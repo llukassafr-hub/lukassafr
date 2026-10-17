@@ -1,0 +1,28 @@
+name: Deliver continuous music story revision
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-clean.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-clean/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-clean/part* > videos/pribeh-plynuly-s-hudbou.mp4
+          echo '2846c350705add7da9cc2b6cd03dee3bb7814e6f3cbfb10b347eb91e7fa96a5a  videos/pribeh-plynuly-s-hudbou.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-plynuly-s-hudbou.mp4
+          git commit -m "Add story revision with continuous music and cleaned scenes"
+          git push
