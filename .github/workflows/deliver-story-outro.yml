@@ -1,0 +1,28 @@
+name: Deliver story with real footage drop outro
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-outro.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-outro/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-outro/part* > videos/pribeh-s-realnym-zaverem.mp4
+          echo '3b943b0536a6c6306a7a89509bf05a973e47f63e67c91c766d2acf1e8be5d9db  videos/pribeh-s-realnym-zaverem.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-s-realnym-zaverem.mp4
+          git commit -m "Append real footage 1-10 with beat-synced drop transitions"
+          git push
