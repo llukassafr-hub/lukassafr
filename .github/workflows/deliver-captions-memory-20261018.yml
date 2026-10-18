@@ -1,0 +1,28 @@
+name: Deliver captioned story
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-captions-memory-20261018.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/captions-memory-20261018/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/captions-memory-20261018/part* > videos/pribeh-final-titulky.mp4
+          echo '168075c89019d17479b7e46e24c5a7137097ecaf677f45cd44372a712797e717  videos/pribeh-final-titulky.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-final-titulky.mp4
+          git commit -m "Deliver captioned story with moving memory and TikTok insert"
+          git push
