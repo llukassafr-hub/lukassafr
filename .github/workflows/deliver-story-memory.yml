@@ -1,0 +1,28 @@
+name: Deliver rejection memory during dialogue
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-memory.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-memory/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-memory/part* > videos/pribeh-vzpominka.mp4
+          echo 'a5b03c0b8665d040e61e68bc777a888bcd2d096210e12a5f9970ba019b8737c6  videos/pribeh-vzpominka.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-vzpominka.mp4
+          git commit -m "Add brief rejection memory during Ale zaslouzis, preserving soundtrack"
+          git push
