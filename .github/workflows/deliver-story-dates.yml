@@ -1,0 +1,28 @@
+name: Deliver brief photos and story dates
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-dates.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-dates/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-dates/part* > videos/pribeh-roky-kratke-fotky.mp4
+          echo '382ebdf20e19a4e4eda7b3049830e7392731143ba1db056a59617553e710e3cf  videos/pribeh-roky-kratke-fotky.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-roky-kratke-fotky.mp4
+          git commit -m "Shorten photo inserts and add animated 2015 and July 2026 dates"
+          git push
