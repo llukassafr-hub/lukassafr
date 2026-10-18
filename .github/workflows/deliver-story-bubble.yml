@@ -1,0 +1,28 @@
+name: Deliver longer overlays and thought bubble
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-bubble.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-bubble/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-bubble/part* > videos/pribeh-myslenkova-bublina.mp4
+          echo '239c8e903e07f477ae64d15369bb2170484cf1547c378a4b71950125ebb28d71  videos/pribeh-myslenkova-bublina.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-myslenkova-bublina.mp4
+          git commit -m "Extend inserts by 0.3s and show rejection in a two-second thought bubble"
+          git push
