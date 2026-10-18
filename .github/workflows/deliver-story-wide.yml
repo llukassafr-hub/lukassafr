@@ -1,0 +1,28 @@
+name: Deliver story without zoom
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-wide.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-wide/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-wide/part* > videos/pribeh-bez-priblizeni.mp4
+          echo '64cc776f0a82bc21fbc3bcd6b45ff5aa5e3e93ee40872e36c1b66f99eb1ddb22  videos/pribeh-bez-priblizeni.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-bez-priblizeni.mp4
+          git commit -m "Restore full frame and remove opening ToHLE"
+          git push
