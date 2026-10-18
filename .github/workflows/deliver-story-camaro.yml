@@ -1,0 +1,28 @@
+name: Deliver shorter transformation and Camaro photo
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-camaro.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-camaro/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-camaro/part* > videos/pribeh-kratke-fotky-camaro.mp4
+          echo '18a0b5cf9db7c9865294e902a4e39e41c2a6e28ca735832e445cf60b74f833de  videos/pribeh-kratke-fotky-camaro.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-kratke-fotky-camaro.mp4
+          git commit -m "Shorten transformation and add lower photo during best-day dialogue"
+          git push
