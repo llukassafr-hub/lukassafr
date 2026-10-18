@@ -1,0 +1,28 @@
+name: Deliver story without ToHLE
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-no-tohle.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-no-tohle/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-no-tohle/part* > videos/pribeh-bez-tohle.mp4
+          echo '3101e6026e1b31ebfbc5e4aa037560399b215353ecaf197010dbe49aa5bd9bb4  videos/pribeh-bez-tohle.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-bez-tohle.mp4
+          git commit -m "Remove remaining ToHLE dialogue from gym while preserving music"
+          git push
