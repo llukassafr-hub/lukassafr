@@ -1,0 +1,28 @@
+name: Deliver holograms and transformation story
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-holograms.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-holograms/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-holograms/part* > videos/pribeh-s-promenou.mp4
+          echo '8f8cb285c459bf96f28056f41c81ebe94f853eb880b13bb0a2394f3334be8289  videos/pribeh-s-promenou.mp4' | sha256sum -c -
+      - name: Save revised video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-s-promenou.mp4
+          git commit -m "Add imagined profile, payment holograms and before-after transformation; restore BMW"
+          git push
