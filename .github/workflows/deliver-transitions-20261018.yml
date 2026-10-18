@@ -1,0 +1,28 @@
+name: Deliver smoother transitions
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-transitions-20261018.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/transitions-20261018/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/transitions-20261018/part* > videos/pribeh-lepsi-prechody.mp4
+          echo '5488243bc8f46963d039a8fe9c953c3913fc012823e51ab10be71c6e64a6c7c4  videos/pribeh-lepsi-prechody.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-lepsi-prechody.mp4
+          git commit -m "Deliver smoother beat-matched transitions"
+          git push
