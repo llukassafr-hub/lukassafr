@@ -1,0 +1,28 @@
+name: Deliver longer car footage
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-auto-long-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/auto-long-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble longer footage
+        run: |
+          mkdir -p videos/auto-omni-delsi
+          cat .delivery/auto-long-20261019/part* > videos/auto-omni-delsi/04-holka-u-auta-delsi.mp4
+          echo '73dc0a86d222c950f154cb730031f08cba6db0c1c0cfe5656f5f3eed0ba5f7a4  videos/auto-omni-delsi/04-holka-u-auta-delsi.mp4' | sha256sum -c -
+      - name: Save footage
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/auto-omni-delsi/04-holka-u-auta-delsi.mp4
+          git commit -m "Deliver full longer companion car shot"
+          git push
