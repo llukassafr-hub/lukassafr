@@ -1,0 +1,28 @@
+name: Deliver POV pullback and intro title
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-pullback-title-v8-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-pullback-title-v8-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-pullback-title-v8-20261019/part* > videos/pov-odzoomovani-text.mp4
+          echo '2682781363b160e131b112fda337395b2098728013729ed22de658ef1f6741ea  videos/pov-odzoomovani-text.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-odzoomovani-text.mp4
+          git commit -m "Deliver POV with opening pullback and short Czech title"
+          git push
