@@ -1,0 +1,28 @@
+name: Deliver revised POV action cut
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-action-v7-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-action-v7-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-action-v7-20261019/part* > videos/pov-finalni-strih.mp4
+          echo 'a78e35ef35b3d1e779a5b53a222f66ceef334edff31d032727c90fb4132edd3f  videos/pov-finalni-strih.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-finalni-strih.mp4
+          git commit -m "Deliver tighter POV with gate opening and moving intro"
+          git push
