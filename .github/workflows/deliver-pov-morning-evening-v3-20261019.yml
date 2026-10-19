@@ -1,0 +1,28 @@
+name: Deliver POV morning and evening v3
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-morning-evening-v3-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-morning-evening-v3-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-morning-evening-v3-20261019/part* > videos/pov-rano-vecer.mp4
+          echo 'fb3f0609468da2b7b3259b9e764b68b6af542f7c62adb2eabde159b7bcf913e5  videos/pov-rano-vecer.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-rano-vecer.mp4
+          git commit -m "Deliver POV with morning bed and evening TV scenes, no title"
+          git push
