@@ -1,0 +1,28 @@
+name: Deliver smoother POV v2
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-smooth-v2-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-smooth-v2-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-smooth-v2-20261019/part* > videos/pov-plynulejsi-strih.mp4
+          echo '1bf4c7513f54d4d6e2f98eef94e4824d91768618410c7ef6f2db24fda2098531  videos/pov-plynulejsi-strih.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-plynulejsi-strih.mp4
+          git commit -m "Deliver revised POV with fewer cuts and completed actions"
+          git push
