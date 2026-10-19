@@ -1,0 +1,28 @@
+name: Deliver POV routine
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-routine-20261019.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-routine-20261019/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-routine-20261019/part* > videos/pov-jedes-si-svoje.mp4
+          echo '7316094bbe0872b2bdf083fb08cf35fad344fa7efea06b5b0b3951a1089166bd  videos/pov-jedes-si-svoje.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-jedes-si-svoje.mp4
+          git commit -m "Deliver first POV routine edit"
+          git push
