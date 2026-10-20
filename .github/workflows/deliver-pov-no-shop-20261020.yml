@@ -1,0 +1,28 @@
+name: Deliver POV without shop exit
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-no-shop-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-no-shop-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-no-shop-20261020/part* > videos/pov-after-she-left-bez-obchodu.mp4
+          echo 'a4190ba68a777b2bdbe4a8933b2f829ebfd2ea085e64bf74ae12a1084e531602  videos/pov-after-she-left-bez-obchodu.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-after-she-left-bez-obchodu.mp4
+          git commit -m "Deliver POV with third-from-last shop exit removed"
+          git push
