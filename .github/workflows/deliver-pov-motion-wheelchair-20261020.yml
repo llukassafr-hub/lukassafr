@@ -1,0 +1,28 @@
+name: Deliver motion captions and wheelchair opening
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-motion-wheelchair-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-motion-wheelchair-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-motion-wheelchair-20261020/part* > videos/pov-after-she-left-motion-text.mp4
+          echo 'fa44ace9d7c2589108e2b445167787bfd39215cb3f3b675c08880ab802fd9f0c  videos/pov-after-she-left-motion-text.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-after-she-left-motion-text.mp4
+          git commit -m "Deliver wheelchair opening motion text on every shot and shorter ending"
+          git push
