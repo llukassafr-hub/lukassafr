@@ -1,0 +1,28 @@
+name: Deliver reel with key and morning
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-key-bed-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-key-bed-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-key-bed-20261020/part* > videos/pov-s-klicem-a-ranem.mp4
+          echo '7998f5784d2423c28b04641e4bee4353dd717a3664125db93a013336f784b606  videos/pov-s-klicem-a-ranem.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-s-klicem-a-ranem.mp4
+          git commit -m "Deliver reel with BMW key and blonde morning shot"
+          git push
