@@ -1,0 +1,28 @@
+name: Deliver shorter shots and stronger dark grade
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-short-cuts-dark-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-short-cuts-dark-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-short-cuts-dark-20261020/part* > videos/pov-dark-kratsi-zabery.mp4
+          echo 'f0c466b74399538a9a735411428052b682c63747fdd486b95560b11fd0ffc374  videos/pov-dark-kratsi-zabery.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-dark-kratsi-zabery.mp4
+          git commit -m "Deliver shorter shots at original playback speed with stronger dark grade"
+          git push
