@@ -1,0 +1,28 @@
+name: Deliver mood edit with reference soundtrack
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-mood-new-track-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-mood-new-track-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-mood-new-track-20261020/part* > videos/pov-after-she-left-mood.mp4
+          echo '7941ceeea9134b2ad2b7df9b5a53cdeff674e65321f9f117b82800fe771880f3  videos/pov-after-she-left-mood.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-after-she-left-mood.mp4
+          git commit -m "Deliver mood grade extended opening title and uploaded reference music"
+          git push
