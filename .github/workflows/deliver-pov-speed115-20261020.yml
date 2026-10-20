@@ -1,0 +1,28 @@
+name: Deliver reel 115 percent speed
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-speed115-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-speed115-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-speed115-20261020/part* > videos/pov-115x.mp4
+          echo '1c5e253b5bcbb397acab421b551ad0ba62c1fe9d1ede1b5982eca92c7d1240bb  videos/pov-115x.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-115x.mp4
+          git commit -m "Deliver reel at 1.15x speed"
+          git push
