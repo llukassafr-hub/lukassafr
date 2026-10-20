@@ -1,0 +1,28 @@
+name: Deliver revised short POV
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-kripl-day-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-kripl-day-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-kripl-day-20261020/part* > videos/pov-kripl-day.mp4
+          echo '80633a8792753c4bb10acbf80db78bdd5766f37421426df55f15897080c1840d  videos/pov-kripl-day.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-kripl-day.mp4
+          git commit -m "Deliver short pullback intro new title and updated BMW footage"
+          git push
