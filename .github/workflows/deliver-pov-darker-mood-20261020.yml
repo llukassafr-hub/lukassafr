@@ -1,0 +1,28 @@
+name: Deliver stronger dark mood
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-darker-mood-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-darker-mood-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-darker-mood-20261020/part* > videos/pov-after-she-left-dark.mp4
+          echo 'c3fd73b9eab46c5042138205f663e963d8a52169c9582084157de60a879e9bc8  videos/pov-after-she-left-dark.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-after-she-left-dark.mp4
+          git commit -m "Deliver stronger dark mood with original edit soundtrack and extended title"
+          git push
