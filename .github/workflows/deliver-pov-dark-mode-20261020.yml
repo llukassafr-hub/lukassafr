@@ -1,0 +1,28 @@
+name: Deliver dark POV without car cleaning
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-pov-dark-mode-20261020.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/pov-dark-mode-20261020/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/pov-dark-mode-20261020/part* > videos/pov-dark-mode.mp4
+          echo '73d48ff9815cf02cf9a1a9f4f113107a4f9bee41140d73b125b2a0bcfe536700  videos/pov-dark-mode.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pov-dark-mode.mp4
+          git commit -m "Deliver dark graded POV without vacuuming shot"
+          git push
