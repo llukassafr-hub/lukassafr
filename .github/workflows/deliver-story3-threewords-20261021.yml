@@ -1,0 +1,28 @@
+name: Deliver three word motion captions
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-threewords-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-threewords-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-threewords-20261021/part* > videos/pribeh3-titulky-3-slova.mp4
+          echo 'e6987149acee57ba39c597334c4ee0c2b1299e500c8c182fad6962f221658b14  videos/pribeh3-titulky-3-slova.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-titulky-3-slova.mp4
+          git commit -m "Deliver captions with maximum three words and stronger motion"
+          git push
