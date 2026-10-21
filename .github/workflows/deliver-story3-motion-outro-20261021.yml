@@ -1,0 +1,28 @@
+name: Deliver motion story
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-motion-outro-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-motion-outro-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-motion-outro-20261021/part* > videos/pribeh3-motion-zaver.mp4
+          echo 'ca9fa5e83efd2016896c29cffb473f282319659c5f46fe04e51b04664ef6e49d  videos/pribeh3-motion-zaver.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-motion-zaver.mp4
+          git commit -m "Deliver motion edit with real ending"
+          git push
