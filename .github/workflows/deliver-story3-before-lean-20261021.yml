@@ -1,0 +1,28 @@
+name: Deliver cut before leaning on car
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-before-lean-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-before-lean-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-before-lean-20261021/part* > videos/pribeh3-strih-pred-oprenim.mp4
+          echo 'b2976beef2b1b25356be2ac33e2e7d2cd1a5090763354d9b65845752b9922a13  videos/pribeh3-strih-pred-oprenim.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-strih-pred-oprenim.mp4
+          git commit -m "Deliver cut before ex leans on BMW"
+          git push
