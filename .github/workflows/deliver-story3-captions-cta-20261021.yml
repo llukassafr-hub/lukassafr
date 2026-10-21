@@ -1,0 +1,28 @@
+name: Deliver captioned story
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-captions-cta-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-captions-cta-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-captions-cta-20261021/part* > videos/pribeh3-titulky-pokracovani.mp4
+          echo 'fe1a6525e44c8c443a48e0e23006f1997041c08bbac7f7b7c196553a3f1b304b  videos/pribeh3-titulky-pokracovani.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-titulky-pokracovani.mp4
+          git commit -m "Deliver captions and continuation title"
+          git push
