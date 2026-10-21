@@ -1,0 +1,28 @@
+name: Deliver new BMW ending
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-new-ending-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-new-ending-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble verified video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-new-ending-20261021/part* > videos/pribeh3-novy-konec.mp4
+          echo '28f61f1b993bd1cf295ed48c5d170bc351a418f70ad96a6ab6aa35a9b96995e6  videos/pribeh3-novy-konec.mp4' | sha256sum -c -
+      - name: Save finished video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-novy-konec.mp4
+          git commit -m "Deliver story with new two-clip BMW ending"
+          git push
