@@ -1,0 +1,28 @@
+name: Deliver story photos
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story3-morephotos-20261021.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story3-morephotos-20261021/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story3-morephotos-20261021/part* > videos/pribeh3-dalsi-fotky.mp4
+          echo '6ef5d6845c001f4f8055edee55d8c9ee8cf51d45aa07adaa7bbb4559f67b243e  videos/pribeh3-dalsi-fotky.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh3-dalsi-fotky.mp4
+          git commit -m "Deliver story with requested photos"
+          git push
