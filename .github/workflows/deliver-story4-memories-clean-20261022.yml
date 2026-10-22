@@ -1,0 +1,28 @@
+name: Deliver story four memories and clean cuts
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story4-memories-clean-20261022.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story4-memories-clean-20261022/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story4-memories-clean-20261022/part* > videos/pribeh4-vzpominky-bez-probliknuti.mp4
+          echo '444f927e72f26f8e5e2cac66b0b8da9b992b4ca2b8cc5ab3715ef0d59a78a7ff  videos/pribeh4-vzpominky-bez-probliknuti.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh4-vzpominky-bez-probliknuti.mp4
+          git commit -m "Deliver memories, years and clean scene cuts"
+          git push
