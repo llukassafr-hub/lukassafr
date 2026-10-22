@@ -1,0 +1,28 @@
+name: Deliver story four first cut
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story4-firstcut-20261022.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story4-firstcut-20261022/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story4-firstcut-20261022/part* > videos/pribeh4-prvni-strih.mp4
+          echo '69f2fa297a99d339384f4d0d3c024495c0d568367bc2cc5d053aac1bac7beba8  videos/pribeh4-prvni-strih.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh4-prvni-strih.mp4
+          git commit -m "Deliver story four first cut"
+          git push
