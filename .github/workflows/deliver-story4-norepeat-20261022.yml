@@ -1,0 +1,28 @@
+name: Deliver story four without repeated line
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story4-norepeat-20261022.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story4-norepeat-20261022/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story4-norepeat-20261022/part* > videos/pribeh4-bez-opakovani.mp4
+          echo '8b516f1501aa026b95a97e70e46a5709b69d44acfa4b5fe02e26774ede74bf15  videos/pribeh4-bez-opakovani.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh4-bez-opakovani.mp4
+          git commit -m "Deliver story four without repeated five minutes line"
+          git push
