@@ -1,0 +1,28 @@
+name: Deliver Story 4 bank screens and original outro
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story4-bank-originaloutro-20261022.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story4-bank-originaloutro-20261022/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story4-bank-originaloutro-20261022/part* > videos/pribeh4-banka-puvodni-zaver.mp4
+          echo 'c2375092fa314f6cd80b65fb3ce324519833cc0252a99e3b1cac2aa84c60ebc8  videos/pribeh4-banka-puvodni-zaver.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh4-banka-puvodni-zaver.mp4
+          git commit -m "Deliver Story 4 bank screens and earlier outro footage"
+          git push
