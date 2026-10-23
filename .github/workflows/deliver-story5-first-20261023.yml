@@ -1,0 +1,28 @@
+name: Deliver Story 5
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story5-first-20261023.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story5-first-20261023/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story5-first-20261023/part* > videos/pribeh5-hotovo.mp4
+          echo '061cc37911d648cc690f86f526ed8bbcd3e5cec673d24624d3c5630b3a965923  videos/pribeh5-hotovo.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh5-hotovo.mp4
+          git commit -m "Deliver Story 5 with clean dialogue and motion captions"
+          git push
