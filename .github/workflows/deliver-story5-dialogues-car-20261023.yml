@@ -1,0 +1,28 @@
+name: Deliver Story 5 restored dialogue and new car scene
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story5-dialogues-car-20261023.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story5-dialogues-car-20261023/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story5-dialogues-car-20261023/part* > videos/pribeh5-dialogy-bez-postele.mp4
+          echo 'fd1b806b208e37d3328c549f20fd86d1c39760819b6fb7aebe6928a59d52b78f  videos/pribeh5-dialogy-bez-postele.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh5-dialogy-bez-postele.mp4
+          git commit -m "Deliver restored dialogue, new car scene and removed bed shot"
+          git push
