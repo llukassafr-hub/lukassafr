@@ -1,0 +1,28 @@
+name: Deliver Story 5 aligned glow captions and photos
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story5-captions-glow-v5.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story5-captions-glow-v5/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story5-captions-glow-v5/part* > videos/pribeh5-titulky-glow-fotky.mp4
+          echo '38d39bd9b927750cda3aa6355e78f8158ea2061598b3df9c871ee8307f982bd3  videos/pribeh5-titulky-glow-fotky.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh5-titulky-glow-fotky.mp4
+          git commit -m "Deliver Story 5 corrected dialogue captions glow and photos"
+          git push
