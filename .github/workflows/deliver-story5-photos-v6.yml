@@ -1,0 +1,28 @@
+name: Deliver Story 5 larger photos and clean dialogue cuts
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story5-photos-v6.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story5-photos-v6/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story5-photos-v6/part* > videos/pribeh5-vetsi-fotky-opraveny-strih.mp4
+          echo 'c4fed11bd93725d0a819dacf5d621250f0e00f73fe8928b43a8187147023cc07  videos/pribeh5-vetsi-fotky-opraveny-strih.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh5-vetsi-fotky-opraveny-strih.mp4
+          git commit -m "Deliver Story 5 larger photos before after labels and dialogue cuts"
+          git push
