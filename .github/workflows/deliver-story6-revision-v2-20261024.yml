@@ -1,0 +1,28 @@
+name: Deliver story six revision
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story6-revision-v2-20261024.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story6-revision-v2-20261024/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story6-revision-v2-20261024/part* > videos/pribeh6-rychlejsi-promena.mp4
+          echo 'c40640244ccd7a5d312bb04c035a444f35cef09704c263921f8f06655dcca389  videos/pribeh6-rychlejsi-promena.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh6-rychlejsi-promena.mp4
+          git commit -m "Deliver sixth story with phone dashboard and clearer transformation"
+          git push
