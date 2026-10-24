@@ -1,0 +1,28 @@
+name: Deliver sixth story alternating outro
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story6-alternate-v5-20261024.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story6-alternate-v5-20261024/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story6-alternate-v5-20261024/part* > videos/pribeh6-stridany-zaver-odkaz.mp4
+          echo '55b76ea55b668923c9409630e71c810a0c2adcee06e046e116d406dc2fe777d3  videos/pribeh6-stridany-zaver-odkaz.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh6-stridany-zaver-odkaz.mp4
+          git commit -m "Deliver alternating edit and lifestyle outro with link placeholder"
+          git push
