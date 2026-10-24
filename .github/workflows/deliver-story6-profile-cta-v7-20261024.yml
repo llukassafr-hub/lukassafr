@@ -1,0 +1,28 @@
+name: Deliver sixth story profile CTA variant
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story6-profile-cta-v7-20261024.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story6-profile-cta-v7-20261024/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story6-profile-cta-v7-20261024/part* > videos/pribeh6-profil-lukas-safr.mp4
+          echo 'efaf76d9c4e14aee3f64d8521e47be3af684958bdccc3d45666ac0cb2533c52e  videos/pribeh6-profil-lukas-safr.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh6-profil-lukas-safr.mp4
+          git commit -m "Deliver real story on Lukas Safr profile CTA variant"
+          git push
