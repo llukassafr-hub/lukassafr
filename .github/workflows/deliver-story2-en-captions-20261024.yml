@@ -1,0 +1,28 @@
+name: Deliver second English dubbed story captions
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story2-en-captions-20261024.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story2-en-captions-20261024/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story2-en-captions-20261024/part* > videos/pribeh2-anglicke-titulky.mp4
+          echo 'f0f9fabeb6808b94340fcef7f87b908523011378cf6c67d7b9346587cf468058  videos/pribeh2-anglicke-titulky.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh2-anglicke-titulky.mp4
+          git commit -m "Deliver second English dub with synchronized captions"
+          git push
