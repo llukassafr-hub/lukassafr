@@ -1,0 +1,28 @@
+name: Deliver English captions matched to dubbed speech
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story-en-captions-20261024.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story-en-captions-20261024/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story-en-captions-20261024/part* > videos/pribeh-anglicke-titulky.mp4
+          echo 'f6be0687ceadb6ca4d6cc2fabea03508eb07c5b6b4d6a9171d61051ed6a59813  videos/pribeh-anglicke-titulky.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh-anglicke-titulky.mp4
+          git commit -m "Deliver English subtitles synchronized to the supplied dub"
+          git push
