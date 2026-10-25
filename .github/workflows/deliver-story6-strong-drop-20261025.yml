@@ -1,0 +1,28 @@
+name: Deliver sixth story stronger original drop
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story6-strong-drop-20261025.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story6-strong-drop-20261025/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story6-strong-drop-20261025/part* > videos/pribeh6-youtube-silnejsi-drop.mp4
+          echo '4d422e6519c831174bbe66782b861bf26d6e32455dfeb6ddf3425b40de405def  videos/pribeh6-youtube-silnejsi-drop.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh6-youtube-silnejsi-drop.mp4
+          git commit -m "Deliver stronger original bass and drums in sixth story outro"
+          git push
