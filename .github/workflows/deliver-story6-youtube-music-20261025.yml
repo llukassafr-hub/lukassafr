@@ -1,0 +1,28 @@
+name: Deliver sixth story original music version
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story6-youtube-music-20261025.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story6-youtube-music-20261025/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story6-youtube-music-20261025/part* > videos/pribeh6-youtube-nova-hudba.mp4
+          echo '516e96cbb25aac208d1b639fcc329410dc9dbdb670aeaad8e18b810ba33adc62  videos/pribeh6-youtube-nova-hudba.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh6-youtube-nova-hudba.mp4
+          git commit -m "Deliver sixth story with original instrumental soundtrack"
+          git push
