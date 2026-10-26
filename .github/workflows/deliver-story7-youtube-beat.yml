@@ -1,0 +1,28 @@
+name: Deliver story7 YouTube Shorts beat edit
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story7-youtube-beat.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story7-youtube-beat/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story7-youtube-beat/part* > videos/pribeh7-youtube-shorts-rytmus.mp4
+          echo '024677de006b8b40a8a799328a0c1614af010b5e12760346d832afa393b76c56  videos/pribeh7-youtube-shorts-rytmus.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh7-youtube-shorts-rytmus.mp4
+          git commit -m "Deliver story7 Shorts with original music synchronized to outro cuts"
+          git push
