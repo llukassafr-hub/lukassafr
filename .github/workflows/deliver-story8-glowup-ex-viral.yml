@@ -1,0 +1,28 @@
+name: Deliver story8 glowup ex and viral music
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story8-glowup-ex-viral.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story8-glowup-ex-viral/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story8-glowup-ex-viral/part* > videos/pribeh8-glowup-byvala-viral.mp4
+          echo 'd676cb56924e5f81944daaa650d10baf78c9cb87968d4275ac03f37e13535bb7  videos/pribeh8-glowup-byvala-viral.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh8-glowup-byvala-viral.mp4
+          git commit -m "Deliver glowup montage, ex approach, latest ending and viral soundtrack"
+          git push
