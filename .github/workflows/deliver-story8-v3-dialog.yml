@@ -1,0 +1,28 @@
+name: Deliver story8 dialogue
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story8-v3-dialog.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story8-v3-dialog/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story8-v3-dialog/part* > videos/pribeh8-viral-doplneny-dialog.mp4
+          echo '3b4184bd6567c45232b0bad7311cfa255cd68a77f6afba1580bdb8f0c431fc07  videos/pribeh8-viral-doplneny-dialog.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh8-viral-doplneny-dialog.mp4
+          git commit -m "Deliver story8 with complete vow and entry dialogue"
+          git push
