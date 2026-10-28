@@ -1,0 +1,28 @@
+name: Deliver story8 Halloween Klipni
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story8-halloween-klipni.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story8-halloween-klipni/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story8-halloween-klipni/part* > videos/pribeh8-halloween-klipni.mp4
+          echo 'cda799f3092fd5f17050d1cb22d422c424178e0cd6a525f2c6338b0f695704bd  videos/pribeh8-halloween-klipni.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh8-halloween-klipni.mp4
+          git commit -m "Deliver Halloween story with tracked Klipni laptop screen"
+          git push
