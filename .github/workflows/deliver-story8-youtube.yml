@@ -1,0 +1,28 @@
+name: Deliver story8 YouTube music
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-story8-youtube.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/story8-youtube/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/story8-youtube/part* > videos/pribeh8-youtube-shorts.mp4
+          echo '0fd6426748609f6a5827c1485a2a4d66363a88e46eefa15cbd75de92994d8972  videos/pribeh8-youtube-shorts.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/pribeh8-youtube-shorts.mp4
+          git commit -m "Deliver story8 with original instrumental for YouTube"
+          git push
