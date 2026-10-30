@@ -1,0 +1,28 @@
+name: Deliver shorter table with Lukas highlight
+on:
+  push:
+    branches: [reel-export-delivery]
+    paths: ['.github/workflows/deliver-reels-lukas-highlight.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: /.delivery/reels-lukas-highlight/
+          sparse-checkout-cone-mode: false
+      - name: Assemble video
+        run: |
+          mkdir -p videos
+          cat .delivery/reels-lukas-highlight/part* > videos/moje-reels-lukas-zvyrazneni.mp4
+          echo '89234f6f5c62f10b14883075adca93791b5058325f843560d404e816c5dece1f  videos/moje-reels-lukas-zvyrazneni.mp4' | sha256sum -c -
+      - name: Save video
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse videos/moje-reels-lukas-zvyrazneni.mp4
+          git commit -m "Deliver shorter table with animated Lukas Safr highlight"
+          git push
