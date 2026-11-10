@@ -1,0 +1,311 @@
+{
+  "file": "na-fotkach-v4-79s-zvukove-efekty.mp4",
+  "sha256": "bc0d89696dfd54fbbbbdfc3e42dac9734d6a114d385630abd0cf7ae91bd23ceb",
+  "bytes": 26185944,
+  "duration": "78.533333",
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1",
+    "duration": "78.533333",
+    "nb_frames": "2356"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "78.533000"
+  },
+  "full_decode_exit": 0,
+  "black_intervals": [
+    "[blackdetect @ 0x7fcdcc002300] black_start:78.033333 black_end:78.5 black_duration:0.466667"
+  ],
+  "freeze_intervals_over_1_second": [],
+  "audio_loudness": "Summary:\n\n  Integrated loudness:\n    I:         -18.5 LUFS\n    Threshold: -28.7 LUFS\n\n  Loudness range:\n    LRA:         6.8 LU\n    Threshold: -38.7 LUFS\n    LRA low:   -22.9 LUFS\n    LRA high:  -16.0 LUFS\n\n  True peak:\n    Peak:       -1.5 dBFS\n[blackdetect @ 0x7fcdcc002300] black_start:78.033333 black_end:78.5 black_duration:0.466667\n[out#0/null @ 0x56556bdced00] video:1012KiB audio:14712KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 2356 fps=228 q=-0.0 Lsize=N/A time=00:01:18.53 bitrate=N/A speed=7.61x    \n",
+  "captions": {
+    "groups": 37,
+    "max_words": 3,
+    "overlaps": 0
+  },
+  "review_scope": "Automated decode of entire final MP4, loudness and black/freeze scan, source and export contact sheets. Separated voices using Kim Vocal 2, speech checked by ASR after separation; original mixed source audio is not mapped into the export. No continuous manual audiovisual review.",
+  "under_80_seconds": true,
+  "opening_source": "gemini_generated_video_62943302.mp4",
+  "ending_source": "gemini_generated_video_83530e86.mp4",
+  "minimum_tail_after_recognized_words": 0.313,
+  "word_gate_used": false,
+  "isolated_voice_asr": [
+    {
+      "start": 0.56,
+      "end": 2.92,
+      "text": " Ty si kripl, to na Tinderu nebylo vidět."
+    },
+    {
+      "start": 3.0,
+      "end": 4.84,
+      "text": " No jo, a ještě k tomu švorc."
+    },
+    {
+      "start": 6.26,
+      "end": 8.54,
+      "text": " Hnece vrátím i dusi odskočit."
+    },
+    {
+      "start": 13.65,
+      "end": 18.47,
+      "text": " Slečna říkala, že platíte vy, i za ty tři koktejly, co si dala, než jste přijel."
+    },
+    {
+      "start": 19.61,
+      "end": 21.39,
+      "text": " A spoň, že ta růže byla ve Slevě."
+    },
+    {
+      "start": 23.81,
+      "end": 24.81,
+      "text": " Já se jí nedivím."
+    },
+    {
+      "start": 25.73,
+      "end": 28.93,
+      "text": " Osud se na mě vyřádil, ale já s ním vyjebu."
+    },
+    {
+      "start": 40.2,
+      "end": 42.6,
+      "text": " Tohle bych se stříhal líp i se zavřenýma očima."
+    },
+    {
+      "start": 53.73,
+      "end": 55.69,
+      "text": " Hnece vrátím, dusi odskočit."
+    },
+    {
+      "start": 57.1,
+      "end": 59.2,
+      "text": " Ahoj, seš to ty?"
+    },
+    {
+      "start": 60.32,
+      "end": 62.42,
+      "text": " Nebýt kripl, tak tě ani nepoznám."
+    },
+    {
+      "start": 63.26,
+      "end": 65.26,
+      "text": " Tyto potřebuješ zaplatit, vít?"
+    },
+    {
+      "start": 69.16,
+      "end": 75.36,
+      "text": " Stav se někdy na steak."
+    }
+  ],
+  "shot_order": [
+    32,
+    28,
+    5,
+    5,
+    30,
+    30,
+    30,
+    3,
+    3,
+    26,
+    26,
+    26,
+    22,
+    22,
+    21,
+    21,
+    18,
+    18,
+    20,
+    20,
+    15,
+    15,
+    2,
+    2,
+    12,
+    12,
+    9,
+    8,
+    7
+  ],
+  "first_shot_is_supplied_tinder_clip": true,
+  "last_shot_is_selected_steak_clip": true,
+  "all_shots_have_planned_frame_count": true,
+  "expected_final_frame_count": 2356,
+  "sound_effects": [
+    {
+      "time": 9.867,
+      "type": "whoosh",
+      "label": "pohyb k oknu",
+      "peak_dbfs": -21,
+      "duration": 0.43
+    },
+    {
+      "time": 11.292,
+      "type": "thud",
+      "label": "dopad do popelnice — tělo",
+      "peak_dbfs": -11,
+      "duration": 0.38
+    },
+    {
+      "time": 11.322,
+      "type": "metal",
+      "label": "dopad do kovové popelnice",
+      "peak_dbfs": -9,
+      "duration": 0.7
+    },
+    {
+      "time": 12.207,
+      "type": "lid",
+      "label": "zaklapnutí víka popelnice",
+      "peak_dbfs": -14,
+      "duration": 0.52
+    },
+    {
+      "time": 13.617,
+      "type": "rustle",
+      "label": "rozvinutí účtu pod dialogem",
+      "peak_dbfs": -25,
+      "duration": 0.55
+    },
+    {
+      "time": 21.663,
+      "type": "flutter",
+      "label": "pád posledního lístku růže",
+      "peak_dbfs": -30,
+      "duration": 0.42
+    },
+    {
+      "time": 29.253,
+      "type": "whoosh",
+      "label": "převrácení vozíku",
+      "peak_dbfs": -18,
+      "duration": 0.42
+    },
+    {
+      "time": 29.693,
+      "type": "thud",
+      "label": "dopad vozíku na zem",
+      "peak_dbfs": -8.5,
+      "duration": 0.48
+    },
+    {
+      "time": 29.723,
+      "type": "metal",
+      "label": "krátké zachrastění konstrukce vozíku",
+      "peak_dbfs": -21,
+      "duration": 0.6
+    },
+    {
+      "time": 31.893,
+      "type": "crack",
+      "label": "prasknutí váhy",
+      "peak_dbfs": -12,
+      "duration": 0.44
+    },
+    {
+      "time": 35.827,
+      "type": "whoosh",
+      "label": "švih s talířem / ninja pohyb",
+      "peak_dbfs": -21,
+      "duration": 0.42
+    },
+    {
+      "time": 36.807,
+      "type": "buzz",
+      "label": "zavibrování telefonu",
+      "peak_dbfs": -24,
+      "duration": 0.36
+    },
+    {
+      "time": 37.687,
+      "type": "tap",
+      "label": "dopad telefonu",
+      "peak_dbfs": -17,
+      "duration": 0.22
+    },
+    {
+      "time": 43.15,
+      "type": "buzz",
+      "label": "telefony klientů",
+      "peak_dbfs": -25,
+      "duration": 0.38
+    },
+    {
+      "time": 51.183,
+      "type": "fork",
+      "label": "cinknutí příboru při úleku",
+      "peak_dbfs": -21,
+      "duration": 0.42
+    },
+    {
+      "time": 56.173,
+      "type": "whoosh",
+      "label": "rychlý útěk od stolu",
+      "peak_dbfs": -20,
+      "duration": 0.42
+    },
+    {
+      "time": 56.243,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 56.413,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 56.573,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 66.453,
+      "type": "rustle",
+      "label": "podání bankovek",
+      "peak_dbfs": -25,
+      "duration": 0.45
+    },
+    {
+      "time": 71.433,
+      "type": "glass",
+      "label": "sklenička při napití",
+      "peak_dbfs": -26,
+      "duration": 0.48
+    },
+    {
+      "time": 71.983,
+      "type": "glug",
+      "label": "krátké napití",
+      "peak_dbfs": -25,
+      "duration": 0.72
+    },
+    {
+      "time": 73.613,
+      "type": "glass",
+      "label": "položení / snížení skleničky",
+      "peak_dbfs": -28,
+      "duration": 0.25
+    },
+    {
+      "time": 77.493,
+      "type": "ding",
+      "label": "jemný akcent mrknutí",
+      "peak_dbfs": -29,
+      "duration": 0.32
+    }
+  ],
+  "sound_effect_count": 24
+}
