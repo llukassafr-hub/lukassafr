@@ -1,0 +1,33 @@
+{
+  "file": "na-fotkach-jsi-sedel-pracovni-v1.mp4",
+  "sha256": "307dffd9c4050338e4fe05745373a620da827f397b60fab38d7b940500210dd2",
+  "bytes": 62240524,
+  "duration": "160.841000",
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1",
+    "duration": "160.800000",
+    "nb_frames": "4807"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "160.841000"
+  },
+  "full_decode_exit": 0,
+  "black_intervals": [
+    "[blackdetect @ 0x7f1478002300] black_start:160.333008 black_end:160.799674 black_duration:0.466667"
+  ],
+  "freeze_intervals_over_1_second": [],
+  "audio_loudness": "Summary:\n\n  Integrated loudness:\n    I:         -16.5 LUFS\n    Threshold: -27.0 LUFS\n\n  Loudness range:\n    LRA:         5.0 LU\n    Threshold: -37.1 LUFS\n    LRA low:   -20.1 LUFS\n    LRA high:  -15.1 LUFS\n\n  True peak:\n    Peak:       -0.5 dBFS\n[blackdetect @ 0x7f1478002300] black_start:160.333008 black_end:160.799674 black_duration:0.466667\n[out#0/null @ 0x5571f5537fc0] video:2066KiB audio:30148KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 4807 fps=209 q=-0.0 Lsize=N/A time=00:02:40.83 bitrate=N/A speed=6.98x    \n",
+  "captions": {
+    "groups": 59,
+    "max_words": 3,
+    "overlaps": 0
+  },
+  "review_scope": "Automated decode of entire final MP4, loudness and black/freeze scan, source and export contact sheets. Two Czech ASR passes; no continuous manual audiovisual review."
+}
