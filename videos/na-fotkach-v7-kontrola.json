@@ -1,0 +1,354 @@
+{
+  "file": "na-fotkach-v7-kveten-cerven.mp4",
+  "sha256": "a51b7eda8a1d4b122cc0832d81ad02f4329dea9ec4d857a1766fef97178e5813",
+  "bytes": 24655261,
+  "duration": "68.066667",
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1",
+    "duration": "68.066667",
+    "nb_frames": "2042"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "68.066000"
+  },
+  "full_decode_exit": 0,
+  "black_intervals": [],
+  "freeze_intervals_over_1_second": [],
+  "audio_loudness": "Summary:\n\n  Integrated loudness:\n    I:         -17.4 LUFS\n    Threshold: -27.5 LUFS\n\n  Loudness range:\n    LRA:         4.6 LU\n    Threshold: -37.6 LUFS\n    LRA low:   -20.3 LUFS\n    LRA high:  -15.6 LUFS\n\n  True peak:\n    Peak:       -1.5 dBFS\n[out#0/null @ 0x5635218695c0] video:877KiB audio:12756KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 2042 fps=269 q=-0.0 Lsize=N/A time=00:01:08.06 bitrate=N/A speed=8.97x    \n",
+  "captions": {
+    "groups": 41,
+    "max_words": 3,
+    "overlaps": 0
+  },
+  "review_scope": "Automated decode of entire final MP4, loudness and black/freeze scan, source and export contact sheets. Separated voices using Kim Vocal 2, speech checked by ASR after separation; original mixed source audio is not mapped into the export. No continuous manual audiovisual review.",
+  "under_80_seconds": true,
+  "opening_source": "gemini_generated_video_62943302.mp4",
+  "ending_source": "gemini_generated_video_83530e86.mp4",
+  "minimum_tail_after_recognized_words": 0.1133,
+  "word_gate_used": false,
+  "isolated_voice_asr": [
+    {
+      "start": 0.0,
+      "end": 2.76,
+      "text": " Ty si kripl, to na Tinderu nebylo vidět."
+    },
+    {
+      "start": 2.82,
+      "end": 4.68,
+      "text": " No jo, a ještě k tomu švorc."
+    },
+    {
+      "start": 5.62,
+      "end": 8.24,
+      "text": " Hned se vrátím, jdu si odskočit."
+    },
+    {
+      "start": 12.51,
+      "end": 17.33,
+      "text": " Slečna říkala, že platíte vy i za ty tři koktejly, co si dala, než jste přijel."
+    },
+    {
+      "start": 18.15,
+      "end": 19.43,
+      "text": " Já se jí nedivím."
+    },
+    {
+      "start": 20.31,
+      "end": 23.53,
+      "text": " Osud se na mě vyřádil, ale já s ním vyjebu."
+    },
+    {
+      "start": 30.71,
+      "end": 33.13,
+      "text": " Tohle bych se stříhal líp i se zavřenýma očima."
+    },
+    {
+      "start": 35.78,
+      "end": 37.88,
+      "text": " Sice je to mrzák, ale je to někdo."
+    },
+    {
+      "start": 38.52,
+      "end": 40.36,
+      "text": " Díky zlato, to potěší."
+    },
+    {
+      "start": 41.2,
+      "end": 43.44,
+      "text": " Holky, tohle je můj sugar cripple!"
+    },
+    {
+      "start": 48.4,
+      "end": 50.5,
+      "text": " Hned se vrátím, dusi odskočit!"
+    },
+    {
+      "start": 52.4,
+      "end": 53.9,
+      "text": " Ahoj, seš to ty?"
+    },
+    {
+      "start": 54.54,
+      "end": 56.7,
+      "text": " Nebyjt cripple, tak tě ani nepoznám."
+    },
+    {
+      "start": 57.4,
+      "end": 59.12,
+      "text": " Ty to potřebuješ zaplatit, víď?"
+    },
+    {
+      "start": 63.03,
+      "end": 63.91,
+      "text": " Stav se někdy..."
+    },
+    {
+      "start": 66.79,
+      "end": 67.31,
+      "text": " ...na steak."
+    }
+  ],
+  "shot_order": [
+    32,
+    28,
+    5,
+    5,
+    30,
+    3,
+    3,
+    26,
+    26,
+    26,
+    21,
+    21,
+    18,
+    16,
+    17,
+    20,
+    15,
+    15,
+    2,
+    2,
+    12,
+    12,
+    9,
+    8,
+    7,
+    7
+  ],
+  "first_shot_is_supplied_tinder_clip": true,
+  "last_shot_is_selected_steak_clip": true,
+  "all_shots_have_planned_frame_count": true,
+  "expected_final_frame_count": 2042,
+  "sound_effects": [
+    {
+      "type": "original_recording",
+      "source_index": 5,
+      "source_path": "/workspace/attachments/6e6e09d6-f4a9-467b-ad0c-452d815b77e6/gemini_generated_video_a7cb307f.mp4",
+      "source_in": 8.0,
+      "source_out": 9.4,
+      "time": 10.53333333333333,
+      "duration": 1.4000000000000004,
+      "label": "původní dopad a víko popelnice",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.5458918735971781,
+      "source_peak": 0.5162895917892456,
+      "output_peak": 0.2818382978439331
+    },
+    {
+      "type": "original_recording",
+      "source_index": 3,
+      "source_path": "/workspace/attachments/63643afa-242e-4ef6-8443-a05090a87165/gemini_generated_video_2dbc1ca3.mp4",
+      "source_in": 7.800000000000004,
+      "source_out": 9.500000000000004,
+      "time": 23.833333333333336,
+      "duration": 1.6999999999999993,
+      "label": "původní převrácení vozíku",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.46570190495039726,
+      "source_peak": 0.6051903367042542,
+      "output_peak": 0.2818382978439331
+    },
+    {
+      "type": "original_recording",
+      "source_index": 26,
+      "source_path": "/workspace/attachments/d1c9ef5b-15f2-446d-86c7-0c0c4c362ded/gemini_generated_video_3b5bd1f8.mp4",
+      "source_in": 0.7199999999999989,
+      "source_out": 1.6499999999999986,
+      "time": 25.936666666666664,
+      "duration": 0.9299999999999997,
+      "label": "původní prasknutí váhy",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.4524145600647478,
+      "source_peak": 0.39306414127349854,
+      "output_peak": 0.17782793939113617
+    },
+    {
+      "time": 9.133999999999999,
+      "type": "whoosh",
+      "label": "pohyb k oknu",
+      "peak_dbfs": -21,
+      "duration": 0.43
+    },
+    {
+      "time": 12.483999999999998,
+      "type": "rustle",
+      "label": "rozvinutí účtu pod dialogem",
+      "peak_dbfs": -25,
+      "duration": 0.55
+    },
+    {
+      "time": 46.58333333333333,
+      "type": "fork",
+      "label": "cinknutí příboru při úleku",
+      "peak_dbfs": -21,
+      "duration": 0.42
+    },
+    {
+      "time": 50.97333333333333,
+      "type": "whoosh",
+      "label": "rychlý útěk od stolu",
+      "peak_dbfs": -20,
+      "duration": 0.42
+    },
+    {
+      "time": 51.04333333333332,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 51.21333333333334,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 51.373333333333335,
+      "type": "tap",
+      "label": "krátký krok při útěku",
+      "peak_dbfs": -24,
+      "duration": 0.09
+    },
+    {
+      "time": 60.25333333333333,
+      "type": "rustle",
+      "label": "podání bankovek",
+      "peak_dbfs": -25,
+      "duration": 0.45
+    },
+    {
+      "time": 65.61333333333333,
+      "type": "glass",
+      "label": "položení / snížení skleničky",
+      "peak_dbfs": -28,
+      "duration": 0.25
+    }
+  ],
+  "sound_effect_count": 12,
+  "original_fall_events": [
+    {
+      "type": "original_recording",
+      "source_index": 5,
+      "source_path": "/workspace/attachments/6e6e09d6-f4a9-467b-ad0c-452d815b77e6/gemini_generated_video_a7cb307f.mp4",
+      "source_in": 8.0,
+      "source_out": 9.4,
+      "time": 10.53333333333333,
+      "duration": 1.4000000000000004,
+      "label": "původní dopad a víko popelnice",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.5458918735971781,
+      "source_peak": 0.5162895917892456,
+      "output_peak": 0.2818382978439331
+    },
+    {
+      "type": "original_recording",
+      "source_index": 3,
+      "source_path": "/workspace/attachments/63643afa-242e-4ef6-8443-a05090a87165/gemini_generated_video_2dbc1ca3.mp4",
+      "source_in": 7.800000000000004,
+      "source_out": 9.500000000000004,
+      "time": 23.833333333333336,
+      "duration": 1.6999999999999993,
+      "label": "původní převrácení vozíku",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.46570190495039726,
+      "source_peak": 0.6051903367042542,
+      "output_peak": 0.2818382978439331
+    },
+    {
+      "type": "original_recording",
+      "source_index": 26,
+      "source_path": "/workspace/attachments/d1c9ef5b-15f2-446d-86c7-0c0c4c362ded/gemini_generated_video_3b5bd1f8.mp4",
+      "source_in": 0.7199999999999989,
+      "source_out": 1.6499999999999986,
+      "time": 25.936666666666664,
+      "duration": 0.9299999999999997,
+      "label": "původní prasknutí váhy",
+      "processing": "harmonic/percussive mask plus original separated nonverbal voice",
+      "gain": 0.4524145600647478,
+      "source_peak": 0.39306414127349854,
+      "output_peak": 0.17782793939113617
+    }
+  ],
+  "generated_fall_replacements_used": false,
+  "music_source": "celá hudba.MP3, newly uploaded 751749-byte file",
+  "music_source_duration": 31.3208333333,
+  "blonde_dialogue_shots": [
+    {
+      "start": 35.03333333333333,
+      "duration": 5.533333333333333,
+      "source_index": 16
+    },
+    {
+      "start": 40.56666666666666,
+      "duration": 3.066666666666667,
+      "source_index": 17
+    }
+  ],
+  "black_haired_partner_montage_seconds": 0.8,
+  "ending_source_out": 7.933333333333334,
+  "ending_tail_after_word_seconds": 0.1133,
+  "no_black_coda": true,
+  "broccoli_scenes_removed": true,
+  "ringing_phone_shot_removed": true,
+  "ring_effects_removed": true,
+  "all_other_dialogue_text_retained": true,
+  "seconds_shorter_than_v6": 2.467,
+  "business_card_reply_removed": true,
+  "month_labels": [
+    {
+      "text": "KVĚTEN",
+      "source_index": 16,
+      "start": 35.03333333333333,
+      "duration": 5.533333333333333
+    },
+    {
+      "text": "KVĚTEN",
+      "source_index": 17,
+      "start": 40.56666666666666,
+      "duration": 3.066666666666667
+    },
+    {
+      "text": "ČERVEN",
+      "source_index": 20,
+      "start": 43.63333333333333,
+      "duration": 0.8
+    },
+    {
+      "text": "ČERVEN",
+      "source_index": 15,
+      "start": 44.43333333333333,
+      "duration": 1.1
+    }
+  ],
+  "departure_and_escape_unchanged": true
+}
