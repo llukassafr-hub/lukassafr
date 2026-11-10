@@ -1,0 +1,33 @@
+{
+  "file": "na-fotkach-v2-kratsi-cisty-zvuk.mp4",
+  "sha256": "cf33118b8f1fa5dc718a6c09b67f5213a99cf5dd6935e410094e4bb1955981ea",
+  "bytes": 40989389,
+  "duration": "110.005000",
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1",
+    "duration": "109.933333",
+    "nb_frames": "3298"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "110.005000"
+  },
+  "full_decode_exit": 0,
+  "black_intervals": [
+    "[blackdetect @ 0x7fbb14002300] black_start:109.433333 black_end:109.9 black_duration:0.466667"
+  ],
+  "freeze_intervals_over_1_second": [],
+  "audio_loudness": "Summary:\n\n  Integrated loudness:\n    I:         -18.4 LUFS\n    Threshold: -28.6 LUFS\n\n  Loudness range:\n    LRA:         7.2 LU\n    Threshold: -38.6 LUFS\n    LRA low:   -23.1 LUFS\n    LRA high:  -15.9 LUFS\n\n  True peak:\n    Peak:       -1.0 dBFS\n[blackdetect @ 0x7fbb14002300] black_start:109.433333 black_end:109.9 black_duration:0.466667\n[out#0/null @ 0x558a67582b00] video:1417KiB audio:20616KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 3298 fps=232 q=-0.0 Lsize=N/A time=00:01:49.93 bitrate=N/A speed=7.73x    \n",
+  "captions": {
+    "groups": 56,
+    "max_words": 3,
+    "overlaps": 0
+  },
+  "review_scope": "Automated decode of entire final MP4, loudness and black/freeze scan, source and export contact sheets. Separated voices using Kim Vocal 2, speech checked by ASR after separation; original mixed source audio is not mapped into the export. No continuous manual audiovisual review."
+}
