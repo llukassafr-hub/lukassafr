@@ -1,0 +1,143 @@
+{
+  "file": "na-fotkach-v3-do-80s-cely-uvod.mp4",
+  "sha256": "087e3e5b28bbc08bc18dc58125c1381ba90edf5023406363e53134a6152d3a98",
+  "bytes": 26585406,
+  "duration": "76.966667",
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1",
+    "duration": "76.966667",
+    "nb_frames": "2309"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "76.966000"
+  },
+  "full_decode_exit": 0,
+  "black_intervals": [
+    "[blackdetect @ 0x7f8c98002300] black_start:76.466667 black_end:76.933333 black_duration:0.466667"
+  ],
+  "freeze_intervals_over_1_second": [],
+  "audio_loudness": "Summary:\n\n  Integrated loudness:\n    I:         -18.7 LUFS\n    Threshold: -28.9 LUFS\n\n  Loudness range:\n    LRA:         7.2 LU\n    Threshold: -38.9 LUFS\n    LRA low:   -23.2 LUFS\n    LRA high:  -16.0 LUFS\n\n  True peak:\n    Peak:       -1.0 dBFS\n[blackdetect @ 0x7f8c98002300] black_start:76.466667 black_end:76.933333 black_duration:0.466667\n[out#0/null @ 0x55ff80629b80] video:992KiB audio:14424KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 2309 fps=239 q=-0.0 Lsize=N/A time=00:01:16.96 bitrate=N/A speed=7.96x    \n",
+  "captions": {
+    "groups": 36,
+    "max_words": 3,
+    "overlaps": 0
+  },
+  "review_scope": "Automated decode of entire final MP4, loudness and black/freeze scan, source and export contact sheets. Separated voices using Kim Vocal 2, speech checked by ASR after separation; original mixed source audio is not mapped into the export. No continuous manual audiovisual review.",
+  "under_80_seconds": true,
+  "opening_source": "gemini_generated_video_62943302.mp4",
+  "ending_source": "gemini_generated_video_a7437c35.mp4",
+  "minimum_tail_after_recognized_words": 0.313,
+  "word_gate_used": false,
+  "isolated_voice_asr": [
+    {
+      "start": 0.56,
+      "end": 2.92,
+      "text": " Ty si kripl, to na Tinderu nebylo vidět."
+    },
+    {
+      "start": 3.0,
+      "end": 4.84,
+      "text": " No jo, a ještě k tomu švorc."
+    },
+    {
+      "start": 6.3,
+      "end": 8.54,
+      "text": " Hnece vrátím i dusi odskočit."
+    },
+    {
+      "start": 13.67,
+      "end": 18.47,
+      "text": " Slečna říkala, že platíte vy i za ty tři koktejly, co si dala, než jste přijel."
+    },
+    {
+      "start": 19.45,
+      "end": 21.39,
+      "text": " A zpon, že ta růže byla ve Slevě."
+    },
+    {
+      "start": 23.83,
+      "end": 24.81,
+      "text": " Já se jí nedivím."
+    },
+    {
+      "start": 25.73,
+      "end": 28.93,
+      "text": " Osud se na mě vyřádil, ale já s ním vyjebu."
+    },
+    {
+      "start": 40.16,
+      "end": 42.6,
+      "text": " Tohle bych se stříhal líp i se zavřenýma očima."
+    },
+    {
+      "start": 57.07,
+      "end": 58.99,
+      "text": " Hnece vrátím, dusi odskočit."
+    },
+    {
+      "start": 60.43,
+      "end": 62.51,
+      "text": " Ahoj, seš to ty?"
+    },
+    {
+      "start": 63.29,
+      "end": 65.73,
+      "text": " Nebyjt kriplo, tak ti ani nepoznám."
+    },
+    {
+      "start": 66.55,
+      "end": 68.61,
+      "text": " Tyto potřebujš zaplatit, veď."
+    },
+    {
+      "start": 72.28,
+      "end": 73.9,
+      "text": " Stav se někdy na steak."
+    }
+  ],
+  "shot_order": [
+    32,
+    28,
+    5,
+    5,
+    30,
+    30,
+    30,
+    3,
+    3,
+    26,
+    26,
+    26,
+    22,
+    22,
+    21,
+    21,
+    18,
+    18,
+    18,
+    20,
+    20,
+    20,
+    20,
+    15,
+    15,
+    2,
+    2,
+    12,
+    12,
+    9,
+    8,
+    4
+  ],
+  "first_shot_is_supplied_tinder_clip": true,
+  "last_shot_is_selected_steak_clip": true,
+  "all_shots_have_planned_frame_count": true,
+  "expected_final_frame_count": 2309
+}
