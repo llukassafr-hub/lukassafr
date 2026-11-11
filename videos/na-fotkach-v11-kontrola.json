@@ -1,0 +1,158 @@
+{
+  "file": "na-fotkach-v11-vetsi-fotky.mp4",
+  "sha256": "74a32b549824bc7e904445b1856bf95f751982bf57684b7f90b9f8d89508e303",
+  "duration": 74.866667,
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "nb_frames": "2246",
+    "r_frame_rate": "30/1",
+    "duration": "74.866667",
+    "codec_name": "h264"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "duration": "74.866000",
+    "channels": 2,
+    "sample_rate": "48000"
+  },
+  "aac_audio_bit_identical_to_v9": true,
+  "full_decode_exit": 0,
+  "all_eight_photos_used": true,
+  "photo_plan": [
+    {
+      "photo": "1_promena_cviceni.png",
+      "panel": "/workspace/work/story/v11/panels/holo-0.png",
+      "start": 25.6,
+      "end": 28.62,
+      "x": 350,
+      "y": 394,
+      "width": 700,
+      "height": 853,
+      "payment": false
+    },
+    {
+      "photo": "2_vydelavani_hologram.jpg",
+      "panel": "/workspace/work/story/v11/panels/holo-1.png",
+      "start": 29.0,
+      "end": 30.0,
+      "x": 45,
+      "y": 270,
+      "width": 990,
+      "height": 189,
+      "payment": true
+    },
+    {
+      "photo": "6_vydelavani.jpg",
+      "panel": "/workspace/work/story/v11/panels/holo-2.png",
+      "start": 30.5,
+      "end": 31.5,
+      "x": 45,
+      "y": 270,
+      "width": 990,
+      "height": 173,
+      "payment": true
+    },
+    {
+      "photo": "7_vydelavani.jpg",
+      "panel": "/workspace/work/story/v11/panels/holo-3.png",
+      "start": 32.0,
+      "end": 33.0,
+      "x": 45,
+      "y": 270,
+      "width": 990,
+      "height": 260,
+      "payment": true
+    },
+    {
+      "photo": "8_vydelavani.jpg",
+      "panel": "/workspace/work/story/v11/panels/holo-4.png",
+      "start": 33.65,
+      "end": 34.65,
+      "x": 45,
+      "y": 270,
+      "width": 990,
+      "height": 181,
+      "payment": true
+    },
+    {
+      "photo": "4_blondyna.png",
+      "panel": "/workspace/work/story/v11/panels/holo-5.png",
+      "start": 35.2,
+      "end": 39.95,
+      "x": 70,
+      "y": 390,
+      "width": 502,
+      "height": 860,
+      "payment": false
+    },
+    {
+      "photo": "5_blondyna.jpg",
+      "panel": "/workspace/work/story/v11/panels/holo-6.png",
+      "start": 40.65,
+      "end": 43.56,
+      "x": 360,
+      "y": 390,
+      "width": 655,
+      "height": 860,
+      "payment": false
+    },
+    {
+      "photo": "3_cernovlaska.png",
+      "panel": "/workspace/work/story/v11/panels/holo-7.png",
+      "start": 43.67,
+      "end": 45.48,
+      "x": 70,
+      "y": 390,
+      "width": 613,
+      "height": 860,
+      "payment": false
+    }
+  ],
+  "unchanged_segments": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "overlay_segments": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "montage_reused_without_changes": true,
+  "all_overlays_above_caption_region": true,
+  "black_intervals": [],
+  "freezes": [],
+  "loudness": "Summary:\n\n  Integrated loudness:\n    I:         -16.8 LUFS\n    Threshold: -26.8 LUFS\n\n  Loudness range:\n    LRA:         5.9 LU\n    Threshold: -36.9 LUFS\n    LRA low:   -20.1 LUFS\n    LRA high:  -14.2 LUFS\n\n  True peak:\n    Peak:       -1.5 dBFS\n[out#0/null @ 0x5559a79dc4c0] video:965KiB audio:14012KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe= 2246 fps=151 q=-0.0 Lsize=N/A time=00:01:14.86 bitrate=N/A speed=5.05x    \n",
+  "review_scope": "Photo and final-overlay contact sheets, full final decode, AAC stream hash comparison, shot frame lengths, duration and picture/sound scan.",
+  "payment_popup_presence_check": {
+    "before_during_after_pixel_difference": [
+      0.49422222222222223,
+      76.92405555555555,
+      0.7366111111111111
+    ],
+    "pass": true
+  }
+}
